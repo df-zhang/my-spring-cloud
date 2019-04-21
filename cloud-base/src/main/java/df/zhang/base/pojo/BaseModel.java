@@ -13,22 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package df.zhang.auth.config;
-
-import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-
+package df.zhang.base.pojo;
 
 /**
- * Spring Security配置类
+ * TODO
  *
  * @author df.zhang Email: 84154025@qq.com
  * @version 1.0.0
- * @date 2019-04-21
+ * @date 2019-04-22
  */
-@EnableWebSecurity
-@Configuration
-public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
-
+public abstract class BaseModel implements IModel {
 }

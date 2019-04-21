@@ -13,9 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package df.zhang.auth;
+package df.zhang.gateway;
 
 import df.zhang.BasePackage;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -23,25 +24,23 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
- * 鉴权模块启动类。
+ * TODO
  *
  * @author df.zhang Email: 84154025@qq.com
  * @version 1.0.0
  * @date 2019-04-21
  */
 @SpringBootApplication(scanBasePackageClasses = BasePackage.class)
-public class AuthApplication implements CommandLineRunner {
-    /**
-     * Spring Boot 默认将日志框架logback作为SLF4J的实现
-     */
-    private static final Logger LOGGER = LoggerFactory.getLogger(AuthApplication.class);
+@Slf4j
+public class GatewayApplication implements CommandLineRunner {
+
 
     public static void main(String[] args) {
-        SpringApplication.run(AuthApplication.class, args);
+        SpringApplication.run(GatewayApplication.class, args);
     }
 
     @Override
     public void run(String... args) {
-        LOGGER.info("My Cloud Authorization Running...");
+        log.info("My Cloud Gateway Running...");
     }
 }

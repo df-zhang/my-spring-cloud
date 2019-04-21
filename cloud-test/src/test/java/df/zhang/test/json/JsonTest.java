@@ -13,22 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package df.zhang.auth.config;
+package df.zhang.test.json;
 
-import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import com.fasterxml.jackson.core.type.TypeReference;
+import df.zhang.util.JsonUtils;
+import df.zhang.util.date.DatePattern;
 
+import java.util.Date;
 
 /**
- * Spring Security配置类
+ * TODO
  *
  * @author df.zhang Email: 84154025@qq.com
  * @version 1.0.0
  * @date 2019-04-21
  */
-@EnableWebSecurity
-@Configuration
-public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
-
+public class JsonTest {
+    public static void main(String[] args) {
+        System.out.println(DatePattern.DATETIME_YYYY_MM_DD_HH_MM_SS.toString());
+        System.out.println(JsonUtils.serialize(new Date()));
+        JsonUtils.deserialize("2019-04-21 23:34:51", Date.class).ifPresent(System.out::println);
+        JsonUtils.deserialize("{}", new TypeReference<Object>() {
+        }).ifPresent(System.out::println);
+    }
 }

@@ -13,14 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package df.zhang.auth.config;
+package df.zhang.base.pojo;
+
+import java.io.Serializable;
 
 /**
- * TODO
+ * POJO顶层接口，提供序列化接口的继承，以及默认方法
  *
  * @author df.zhang Email: 84154025@qq.com
  * @version 1.0.0
- * @date 2019-04-21
+ * @date 2019-04-22
  */
-public class Test {
+public interface IModel extends Serializable {
 }

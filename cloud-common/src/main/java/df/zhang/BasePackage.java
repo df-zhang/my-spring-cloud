@@ -13,22 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package df.zhang.auth.config;
-
-import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
-import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
-
+package df.zhang;
 
 /**
- * Spring Security配置类
+ * 包信息，为各模块的Application指引包名路径。
  *
  * @author df.zhang Email: 84154025@qq.com
  * @version 1.0.0
  * @date 2019-04-21
  */
-@EnableWebSecurity
-@Configuration
-public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
-
+public final class BasePackage {
+    /**
+     * Base package name
+     */
+    public static final String BASE_PACKAGE_NAME = BasePackage.class.getPackage().getName();
 }
