@@ -15,6 +15,8 @@
  */
 package df.zhang.base.pojo;
 
+import df.zhang.util.BeanUtils;
+
 import java.io.Serializable;
 
 /**
@@ -25,4 +27,17 @@ import java.io.Serializable;
  * @date 2019-04-22
  */
 public interface IModel extends Serializable {
+
+    /**
+     * 为所有IModel的实例提供对象属性copy方法
+     *
+     * @param rClass 目标结果类型
+     * @return R 目标结果实例对象
+     * @date 2019-04-22 23:40:47
+     * @author df.zhang
+     * @since 1.0.0
+     */
+    default <R> R cast(Class<R> rClass) {
+        return BeanUtils.copy(this, rClass);
+    }
 }

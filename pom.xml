@@ -16,6 +16,7 @@
     <packaging>pom</packaging>
     <name>cloud</name>
     <properties>
+        <cglib.version>3.2.10</cglib.version>
         <lombok.version>1.18.6</lombok.version>
         <spring-boot.version>2.1.3.RELEASE</spring-boot.version>
         <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
