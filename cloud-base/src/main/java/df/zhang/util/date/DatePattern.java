@@ -21,8 +21,8 @@ import java.time.format.DateTimeFormatter;
  * 日期时间格式化常量类，基于Java8的Date&Time API
  *
  * @author df.zhang Email: 84154025@qq.com
- * @version 1.0.0
  * @date 2019-04-21
+ * @since 1.0.0
  */
 public final class DatePattern {
 

@@ -16,6 +16,7 @@
 package df.zhang.auth;
 
 import df.zhang.BasePackage;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -30,18 +31,13 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @date 2019-04-21
  */
 @SpringBootApplication(scanBasePackageClasses = BasePackage.class)
+@Slf4j
 public class AuthApplication implements CommandLineRunner {
-    /**
-     * Spring Boot 默认将日志框架logback作为SLF4J的实现
-     */
-    private static final Logger LOGGER = LoggerFactory.getLogger(AuthApplication.class);
-
     public static void main(String[] args) {
         SpringApplication.run(AuthApplication.class, args);
     }
-
     @Override
     public void run(String... args) {
-        LOGGER.info("My Cloud Authorization Running...");
+        log.info("My Cloud Authorization Running...");
     }
 }

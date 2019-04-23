@@ -13,20 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package df.zhang.base.pojo;
+package df.zhang.test.copy;
 
 import lombok.Data;
-
-import java.io.Serializable;
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
 
 /**
- * 基础实体类，提供泛型ID，MySQL使用自增Long、String，MongoDB使用String
+ * TODO
  *
  * @author df.zhang Email: 84154025@qq.com
- * @date 2019-04-22
- * @since 1.0.0
+ * @version 1.0.0
+ * @date 2019-04-23
  */
 @Data
-public abstract class BaseDO<ID extends Serializable> extends BaseModel {
-    private ID id;
+public class Bean1 extends Bean3 {
+    private String m;
+    private Long id;
+    private Boolean bool;
+    private String str;
 }

@@ -21,8 +21,8 @@ import java.util.Objects;
  * 字符串操作类，一些常用的字符串工具集
  *
  * @author df.zhang Email: 84154025@qq.com
- * @version 1.0.0
  * @date 2019-04-21
+ * @since 1.0.0
  */
 public final class StringUtils {
     /**

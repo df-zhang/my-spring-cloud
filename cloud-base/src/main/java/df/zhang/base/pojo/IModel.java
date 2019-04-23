@@ -23,8 +23,8 @@ import java.io.Serializable;
  * POJO顶层接口，提供序列化接口的继承，以及默认方法
  *
  * @author df.zhang Email: 84154025@qq.com
- * @version 1.0.0
  * @date 2019-04-22
+ * @since 1.0.0
  */
 public interface IModel extends Serializable {
 
