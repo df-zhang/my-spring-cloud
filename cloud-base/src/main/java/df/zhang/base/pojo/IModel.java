@@ -15,7 +15,7 @@
  */
 package df.zhang.base.pojo;
 
-import df.zhang.util.BeanUtils;
+import df.zhang.util.bean.BeanUtils;
 
 import java.io.Serializable;
 

@@ -18,7 +18,9 @@ package df.zhang.test.copy;
 import lombok.*;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * TODO
@@ -28,9 +30,9 @@ import java.util.List;
  * @date 2019-04-23
  */
 @Data
-public class Bean2 extends Bean1 {
-    List<Bean1> bean1s = new ArrayList<>();
+public class Bean2 extends Bean3 {
     private long id1 = 34L;
     private boolean bool1 = true;
     private String str1 = "324";
+    private List<String> strs;
 }

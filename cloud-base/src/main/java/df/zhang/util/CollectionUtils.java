@@ -13,25 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package df.zhang.test.copy;
+package df.zhang.util;
 
-import lombok.Data;
-
-import java.beans.BeanInfo;
-import java.beans.IntrospectionException;
-import java.beans.Introspector;
-import java.beans.PropertyDescriptor;
-import java.util.Arrays;
-import java.util.List;
+import java.util.Collection;
 
 /**
  * TODO
  *
  * @author df.zhang Email: 84154025@qq.com
- * @version 1.0.0
- * @date 2019-04-23
+ * @date 2019-05-01
+ * @since 1.0.0
  */
-@Data
-public class Bean3 {
+public class CollectionUtils {
 
+    public static boolean isEmpty(Collection<?> collection) {
+        return collection == null || collection.isEmpty();
+    }
+
+    public static boolean isEmpty(Object[] arr) {
+        return arr == null || arr.length == 0;
+    }
 }

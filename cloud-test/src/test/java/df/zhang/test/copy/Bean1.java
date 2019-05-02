@@ -20,6 +20,11 @@ import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
 /**
  * TODO
  *
@@ -33,4 +38,9 @@ public class Bean1 extends Bean3 {
     private Long id;
     private Boolean bool;
     private String str;
+    private long id1 ;
+    private boolean bool1 = true;
+    private String str1 = "fdsfsd";
+    private String[] strs = {"1", "2", "3", "4", "5"};
+
 }

@@ -13,25 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package df.zhang.test.copy;
+package df.zhang.test.util;
 
-import lombok.Data;
+import df.zhang.auth.config.CustomPasswordEncoder;
 
-import java.beans.BeanInfo;
-import java.beans.IntrospectionException;
-import java.beans.Introspector;
-import java.beans.PropertyDescriptor;
-import java.util.Arrays;
-import java.util.List;
+import java.util.UUID;
+import java.util.stream.IntStream;
 
 /**
  * TODO
  *
  * @author df.zhang Email: 84154025@qq.com
- * @version 1.0.0
- * @date 2019-04-23
+ * @date 2019-05-02
+ * @since 1.0.0
  */
-@Data
-public class Bean3 {
+public class PasswordEncodeTest {
+    public static void main(String[] args) {
+        CustomPasswordEncoder encoder = new CustomPasswordEncoder();
+        System.out.println(encoder.encode("admin"));
 
+    }
 }

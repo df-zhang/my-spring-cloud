@@ -15,18 +15,11 @@
  */
 package df.zhang.test.copy;
 
-import df.zhang.util.BeanUtils;
+import df.zhang.util.bean.BeanUtils;
 import df.zhang.util.ReflectUtils;
-import lombok.*;
-import net.sf.cglib.beans.BeanCopier;
+import net.sf.cglib.beans.BeanGenerator;
 
-import java.lang.reflect.Field;
-import java.lang.reflect.ParameterizedType;
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 /**
  * TODO
@@ -42,15 +35,16 @@ public class BeanCopyTest {
 //        net.sf.cglib.empty.Object$$BeanCopierByCGLIB$$df6dbed5@1e81f4dc
 //        net.sf.cglib.empty.Object$$BeanCopierByCGLIB$$df6dbed5@4d591d15
 //        net.sf.cglib.empty.Object$$BeanCopierByCGLIB$$df6dbed5@65ae6ba4
-        LinkedList linkedList =   ReflectUtils.newInstance(LinkedList.class);
-        System.out.println(linkedList.getClass());
-
-//        Field field = ReflectUtils.getField(Bean2.class, "strs");
+//        LinkedList linkedList =   ReflectUtils.newInstance(LinkedList.class);
+//        System.out.println(linkedList.getClass());
+//
+//        Field field = ReflectUtils.getField(Bean2.class, "bean1Map");
 //
 //        if (field != null) {
 //            Type type = field.getGenericType();
 //            System.out.println(field.getGenericType().getClass());
 //            if (type instanceof ParameterizedType) {
+//                System.out.println(Arrays.toString(((ParameterizedType) type).getActualTypeArguments()));
 //                String genericTypeClassName = ((ParameterizedType) type).getActualTypeArguments()[0].getTypeName();
 //                try {
 //                    System.out.println(Thread.currentThread().getContextClassLoader().loadClass(genericTypeClassName));;
@@ -58,19 +52,8 @@ public class BeanCopyTest {
 //                }
 //            }
 //        }
-//        Bean2 bean2 = new Bean2();
-//        List<Bean1> bean1s = new ArrayList<>();
-//        System.out.println(bean2.getBean1s().getClass());
-//        System.out.println(c);
-//        System.out.println(c == '\u0000');
-//        Bean1 bean1 = new Bean1();
-//
-//        bean2.setId(3L);
-//        BeanUtils.copy(new Bean1(), bean2);
-//        System.out.println(bean2);
-//        ;
-//        BeanCopier.create(Bean1.class, Bean2.class, false)
-//                .copy(bean1, bean2, null);
-//        System.out.println(bean2);
+        String[] strs = {"1", "2", "3", "4", "5"};
+        System.out.println(Arrays.toString(BeanUtils.copyArray(strs, String.class)));
+
     }
 }

@@ -43,14 +43,16 @@ public class ReflectUtils {
         }
         // 如果是接口或者抽象类
         if (isInterfaceOrAbstractClass(clazz)) {
-            // 集合顶层接口或List
-            if (Collection.class.isAssignableFrom(clazz) || List.class.isAssignableFrom(clazz)) {
-                return (R) new ArrayList();
-            }
             // Set
             if (Set.class.isAssignableFrom(clazz)) {
                 return (R) new LinkedHashSet();
             }
+
+            // 集合顶层接口或List
+            if (Collection.class.isAssignableFrom(clazz) || List.class.isAssignableFrom(clazz)) {
+                return (R) new ArrayList();
+            }
+
             // Map
             if (Map.class.isAssignableFrom(clazz)) {
                 return (R) new LinkedHashMap();
