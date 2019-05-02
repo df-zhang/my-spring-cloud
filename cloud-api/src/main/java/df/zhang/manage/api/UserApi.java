@@ -33,7 +33,7 @@ public interface UserApi extends BaseApi {
      *
      * @param username 用户名
      * @return df.zhang.base.pojo.ApiResult&lt;df.zhang.manage.dto.output.UserOutputDTO&gt;
-     * @date 2019-04-22 00:30:30
+     * @date 2019-04-22 00:30
      * @author df.zhang
      * @since 1.0.0
      */

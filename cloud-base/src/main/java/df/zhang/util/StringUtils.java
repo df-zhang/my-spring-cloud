@@ -30,7 +30,7 @@ public final class StringUtils {
      *
      * @param str 字符串
      * @return boolean 非空返回true，空返回false
-     * @date 2019-04-21 23:20:36
+     * @date 2019-04-21 23:20
      * @author df.zhang
      * @since 1.0.0
      */
@@ -43,7 +43,7 @@ public final class StringUtils {
      *
      * @param str 字符串
      * @return boolean 空返回true，非空返回false
-     * @date 2019-04-21 23:21:05
+     * @date 2019-04-21 23:21
      * @author df.zhang
      * @since 1.0.0
      */
@@ -56,7 +56,7 @@ public final class StringUtils {
      *
      * @param str 字符串
      * @return boolean 字符串长度大于0且至少包含一个非空白符的字符时返回true，否则返回false
-     * @date 2019-04-21 23:21:27
+     * @date 2019-04-21 23:21
      * @author df.zhang
      * @since 1.0.0
      */
@@ -69,7 +69,7 @@ public final class StringUtils {
      *
      * @param str 字符串
      * @return boolean 字符串长度大于0且至少包含一个非空白符的字符时返回true，否则返回false
-     * @date 2019-04-21 23:21:27
+     * @date 2019-04-21 23:21
      * @author df.zhang
      * @since 1.0.0
      */
@@ -82,7 +82,7 @@ public final class StringUtils {
      *
      * @param str param1
      * @return boolean 字符串长度为0或者字符串内只有空白符（一个或多个）时，都返回true；否则返回false
-     * @date 2019-04-21 23:25:03
+     * @date 2019-04-21 23:25
      * @author df.zhang
      * @since 1.0.0
      */
@@ -95,7 +95,7 @@ public final class StringUtils {
      *
      * @param str 字符串
      * @return boolean 包含任意非空白符字符时返回true
-     * @date 2019-04-21 23:28:36
+     * @date 2019-04-21 23:28
      * @author df.zhang
      * @since 1.0.0
      */

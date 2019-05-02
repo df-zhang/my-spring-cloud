@@ -105,7 +105,7 @@ public final class JsonUtils {
      *
      * @param obj 任意对象。
      * @return java.lang.String
-     * @date 2019-04-21 21:59:56
+     * @date 2019-04-21 21:59
      * @author df.zhang
      * @since 1.0.0
      */
@@ -134,7 +134,7 @@ public final class JsonUtils {
      * @param json   JSON字符串
      * @param tClass 不为抽象类、不为接口、有无参构造函数的类型
      * @return java.util.Optional&lt;T&gt; 返回类型使用{@link Optional}包装，有效避免空指针异常
-     * @date 2019-04-21 22:35:23
+     * @date 2019-04-21 22:35
      * @author df.zhang
      * @since 1.0.0
      */
@@ -156,7 +156,7 @@ public final class JsonUtils {
      * @param json          JSON字符串
      * @param typeReference 任意{@link TypeReference}的实现类，该类可以接收复杂的泛型参数，用于在编译时获取到准确的泛型类型。
      * @return java.util.Optional&lt;T&gt; 返回类型使用{@link Optional}包装，有效避免空指针异常
-     * @date 2019-04-21 22:41:00
+     * @date 2019-04-21 22:41
      * @author df.zhang
      * @since 1.0.0
      */
@@ -176,7 +176,7 @@ public final class JsonUtils {
      *
      * @param clazz param1
      * @return boolean
-     * @date 2019-04-21 22:08:10
+     * @date 2019-04-21 22:08
      * @author df.zhang
      * @since 1.0.0
      */

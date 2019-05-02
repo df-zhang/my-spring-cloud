@@ -46,7 +46,7 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
      * 使用自定义的密码加密工具，其实现类为{@link CustomPasswordEncoder}
      *
      * @return org.springframework.security.crypto.password.PasswordEncoder
-     * @date 2019-05-02 17:23:25
+     * @date 2019-05-02 17:23
      * @author df.zhang
      * @since 1.0.0
      */

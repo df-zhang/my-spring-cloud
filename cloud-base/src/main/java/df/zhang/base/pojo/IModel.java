@@ -33,7 +33,7 @@ public interface IModel extends Serializable {
      *
      * @param rClass 目标结果类型
      * @return R 目标结果实例对象
-     * @date 2019-04-22 23:40:47
+     * @date 2019-04-22 23:40
      * @author df.zhang
      * @since 1.0.0
      */
