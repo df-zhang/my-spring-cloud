@@ -53,10 +53,16 @@ public final class JsonUtils {
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();
 
     static {
+        // 关闭序列化时遭遇空对象（对象中无任何属性）的错误
         OBJECT_MAPPER.configure(SerializationFeature.FAIL_ON_EMPTY_BEANS, false);
+        // 关闭反序列化时，找不到对应属性或set方法时的错误。
         OBJECT_MAPPER.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+        // 设置值为null的属性不参与序列化
         OBJECT_MAPPER.setSerializationInclusion(JsonInclude.Include.NON_NULL);
+        // 禁用序列化时间对象时，输出为时间戳的特性
         OBJECT_MAPPER.disable(SerializationFeature.WRITE_DATES_AS_TIMESTAMPS);
+        // 驼峰转蛇形命名法（下划线）
+        OBJECT_MAPPER.setPropertyNamingStrategy(PropertyNamingStrategy.SnakeCaseStrategy.SNAKE_CASE);
 
         JavaTimeModule javaTimeModule = new JavaTimeModule();
         javaTimeModule.addSerializer(LocalDateTime.class, new LocalDateTimeSerializer(DatePattern.DATETIME_YYYY_MM_DD_HH_MM_SS));
@@ -98,6 +104,18 @@ public final class JsonUtils {
         OBJECT_MAPPER.registerModule(new ParameterNamesModule());
         OBJECT_MAPPER.registerModule(new Jdk8Module());
         OBJECT_MAPPER.registerModule(javaTimeModule);
+    }
+
+    /**
+     * 获取全局静态资源{@link ObjectMapper}对象。
+     *
+     * @return com.fasterxml.jackson.databind.ObjectMapper
+     * @date 2019-05-04 16:11
+     * @author df.zhang
+     * @since 1.0.0
+     */
+    public static ObjectMapper getObjectMapper() {
+        return OBJECT_MAPPER;
     }
 
     /**

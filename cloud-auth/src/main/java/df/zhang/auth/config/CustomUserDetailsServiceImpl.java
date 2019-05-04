@@ -17,6 +17,7 @@ package df.zhang.auth.config;
 
 import df.zhang.auth.constant.UserStateEnum;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -32,6 +33,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 public class CustomUserDetailsServiceImpl implements UserDetailsService {
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+        log.info("SecurityContext {}", SecurityContextHolder.getContext().getAuthentication());
         log.info("用户名[{}]尝试登录。", username);
         if (!"admin".equals(username)) {
             throw new UsernameNotFoundException(username);

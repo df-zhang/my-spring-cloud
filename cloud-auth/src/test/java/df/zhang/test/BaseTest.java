@@ -17,48 +17,31 @@ package df.zhang.test;
 
 import df.zhang.auth.AuthApplication;
 import org.junit.Before;
-import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.MediaType;
-import org.springframework.test.context.junit4.SpringRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
+import org.springframework.security.test.web.servlet.setup.SecurityMockMvcConfigurers;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
-import org.springframework.test.web.servlet.RequestBuilder;
-import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
-import org.springframework.test.web.servlet.result.MockMvcResultHandlers;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
 
 /**
- * TODO
+ * 单元测试基类
  *
  * @author df.zhang Email: 84154025@qq.com
  * @date 2019-05-02
  * @since 1.0.0
  */
-@RunWith(SpringRunner.class)
+@RunWith(SpringJUnit4ClassRunner.class)
 @SpringBootTest(classes = AuthApplication.class)
-public class BaseTest {
-    private MockMvc mockMvc;
+public abstract class BaseTest {
+    protected MockMvc mockMvc;
     @Autowired
     private WebApplicationContext context;
 
     @Before
     public void setupMockMvc() {
-        mockMvc = MockMvcBuilders.webAppContextSetup(context).build();
-    }
-
-    @Test
-    public void loginTest() throws Exception {
-        System.out.println(mockMvc.perform(MockMvcRequestBuilders.post("/login")
-                .param("username", "admin")
-                .param("password", "password")
-                .contentType(MediaType.APPLICATION_FORM_URLENCODED)
-        ).andReturn().getResponse().getContentAsString());
+        mockMvc = MockMvcBuilders.webAppContextSetup(context).apply(SecurityMockMvcConfigurers.springSecurity()).build();
     }
 }

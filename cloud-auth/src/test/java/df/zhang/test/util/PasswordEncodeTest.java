@@ -15,10 +15,7 @@
  */
 package df.zhang.test.util;
 
-import df.zhang.auth.config.CustomPasswordEncoder;
-
-import java.util.UUID;
-import java.util.stream.IntStream;
+import df.zhang.util.PasswordUtils;
 
 /**
  * TODO
@@ -29,8 +26,8 @@ import java.util.stream.IntStream;
  */
 public class PasswordEncodeTest {
     public static void main(String[] args) {
-        CustomPasswordEncoder encoder = new CustomPasswordEncoder();
-        System.out.println(encoder.encode("admin"));
+
+        System.out.println(PasswordUtils.encode("admin"));
 
     }
 }

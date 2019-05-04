@@ -15,6 +15,9 @@
  */
 package df.zhang.base.pojo;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import df.zhang.base.exception.BasicErrorCode;
+import df.zhang.base.exception.IErrorCode;
 import lombok.*;
 
 import java.io.Serializable;
@@ -33,9 +36,41 @@ import java.io.Serializable;
 @NoArgsConstructor
 @AllArgsConstructor
 public class ApiResult<T> implements Serializable {
-    private Integer code;
+    private String code;
     private String msg;
     private String errCode;
     private String errMsg;
     private T res;
+
+    public static <T> ApiResult<T> success() {
+        return new ApiResult<T>().errorCode(BasicErrorCode.SUCCESS);
+    }
+
+    public ApiResult<T> errorCode(IErrorCode errorCode) {
+        if (errorCode == null) {
+            return this;
+        }
+
+        IErrorCode parent = errorCode.getParent();
+        if (parent == null) {
+            this.code = errorCode.getCode();
+            this.msg = errorCode.getMsg();
+        } else {
+            this.code = parent.getCode();
+            this.msg = parent.getMsg();
+            this.errCode = errorCode.getCode();
+            this.errMsg = errorCode.getMsg();
+        }
+        return this;
+    }
+
+    public ApiResult<T> res(T res) {
+        this.res = res;
+        return this;
+    }
+
+    @JsonIgnore
+    public boolean isSuccess() {
+        return BasicErrorCode.SUCCESS.getCode().equals(this.code);
+    }
 }
