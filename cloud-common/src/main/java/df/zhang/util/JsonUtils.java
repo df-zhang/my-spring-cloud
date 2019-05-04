@@ -46,8 +46,8 @@ import java.util.Optional;
  * JSON序列化或反序列化工具，使用{@link ObjectMapper}实现。
  *
  * @author df.zhang Email: 84154025@qq.com
- * @version 1.0.0
  * @date 2019-04-21
+ * @since 1.0.0
  */
 public final class JsonUtils {
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper();

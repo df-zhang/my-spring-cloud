@@ -19,8 +19,8 @@ package df.zhang;
  * 包信息，为各模块的Application指引包名路径。
  *
  * @author df.zhang Email: 84154025@qq.com
- * @version 1.0.0
  * @date 2019-04-21
+ * @since 1.0.0
  */
 public final class BasePackage {
     /**

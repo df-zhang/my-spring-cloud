@@ -23,8 +23,8 @@ import df.zhang.manage.dto.output.UserOutputDTO;
  * 管理后台的用户模块远程调用接口。该接口由管理后台应用实现。
  *
  * @author df.zhang Email: 84154025@qq.com
- * @version 1.0.0
  * @date 2019-04-22
+ * @since 1.0.0
  */
 public interface UserApi extends BaseApi {
 

@@ -25,8 +25,8 @@ import java.util.Date;
  * TODO
  *
  * @author df.zhang Email: 84154025@qq.com
- * @version 1.0.0
  * @date 2019-04-21
+ * @since 1.0.0
  */
 public class JsonTest {
     public static void main(String[] args) {

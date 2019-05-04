@@ -21,8 +21,8 @@ import lombok.NoArgsConstructor;
  * TODO
  *
  * @author df.zhang Email: 84154025@qq.com
- * @version 1.0.0
  * @date 2019-04-22
+ * @since 1.0.0
  */
 @NoArgsConstructor
 public abstract class BaseApiOutputDTO extends BaseModel {

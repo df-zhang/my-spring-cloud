@@ -32,8 +32,8 @@ import org.springframework.web.bind.annotation.RestController;
  * 鉴权模块启动类。{@link BasePackage}为root包下的类文件，为各模块的Application指引包名路径。
  *
  * @author df.zhang Email: 84154025@qq.com
- * @version 1.0.0
  * @date 2019-04-21
+ * @since 1.0.0
  */
 @SpringBootApplication(scanBasePackageClasses = BasePackage.class)
 @Slf4j

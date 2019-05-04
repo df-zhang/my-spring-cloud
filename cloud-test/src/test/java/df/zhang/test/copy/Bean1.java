@@ -29,8 +29,8 @@ import java.util.Map;
  * TODO
  *
  * @author df.zhang Email: 84154025@qq.com
- * @version 1.0.0
  * @date 2019-04-23
+ * @since 1.0.0
  */
 @Data
 public class Bean1 extends Bean3 {
@@ -38,7 +38,7 @@ public class Bean1 extends Bean3 {
     private Long id;
     private Boolean bool;
     private String str;
-    private long id1 ;
+    private long id1;
     private boolean bool1 = true;
     private String str1 = "fdsfsd";
     private String[] strs = {"1", "2", "3", "4", "5"};

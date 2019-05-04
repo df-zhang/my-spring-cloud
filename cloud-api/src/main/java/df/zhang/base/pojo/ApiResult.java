@@ -26,10 +26,9 @@ import java.io.Serializable;
  * API结果包装类，预计采用protocol buffer来输出API调用结果。
  *
  * @author df.zhang Email: 84154025@qq.com
- * @version 1.0.0
  * @date 2019-04-22
+ * @since 1.0.0
  */
-
 @Getter
 @Setter
 @ToString

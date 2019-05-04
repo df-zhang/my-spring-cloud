@@ -22,12 +22,12 @@ import df.zhang.manage.dto.output.UserOutputDTO;
  * TODO
  *
  * @author df.zhang Email: 84154025@qq.com
- * @version 1.0.0
  * @date 2019-04-22
+ * @since 1.0.0
  */
 public class LombokTest {
     public static void main(String[] args) {
         ApiResult<UserOutputDTO> apiResult = new ApiResult<>();
-        apiResult.setRes(new UserOutputDTO("f", "f", "F","f"));
+        apiResult.setRes(new UserOutputDTO("f", "f", "F", "f"));
     }
 }

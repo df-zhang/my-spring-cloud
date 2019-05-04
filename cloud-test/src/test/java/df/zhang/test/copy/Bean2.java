@@ -26,8 +26,8 @@ import java.util.Map;
  * TODO
  *
  * @author df.zhang Email: 84154025@qq.com
- * @version 1.0.0
  * @date 2019-04-23
+ * @since 1.0.0
  */
 @Data
 public class Bean2 extends Bean3 {
