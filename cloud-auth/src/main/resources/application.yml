@@ -1,6 +1,6 @@
 ---
 server:
-  port: 10443
+  port: 7443
 
 spring:
   profiles:

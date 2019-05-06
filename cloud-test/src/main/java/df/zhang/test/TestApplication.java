@@ -13,21 +13,29 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package df.zhang.test.lombok;
+package df.zhang.test;
 
-import df.zhang.base.pojo.ApiResult;
-import df.zhang.api.dto.output.UserOutputDTO;
+import df.zhang.BasePackage;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 /**
  * TODO
  *
  * @author df.zhang Email: 84154025@qq.com
- * @date 2019-04-22
+ * @date 2019-05-06
  * @since 1.0.0
  */
-public class LombokTest {
+@SpringBootApplication(scanBasePackageClasses = BasePackage.class)
+@Slf4j
+public class TestApplication implements CommandLineRunner {
     public static void main(String[] args) {
-        ApiResult<UserOutputDTO> apiResult = new ApiResult<>();
-//        apiResult.setRes(new UserOutputDTO("f", "f", "F", "f"));
+        SpringApplication.run(TestApplication.class, args);
+    }
+    @Override
+    public void run(String... args) {
+        log.info("My Cloud Test Running...");
     }
 }

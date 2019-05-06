@@ -22,6 +22,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -35,6 +36,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @date 2019-04-21
  * @since 1.0.0
  */
+@EnableFeignClients(basePackageClasses = BasePackage.class)
 @SpringBootApplication(scanBasePackageClasses = BasePackage.class)
 @Slf4j
 @RestController

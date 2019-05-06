@@ -13,24 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package df.zhang.manage.dto.output;
+package df.zhang.api.dto.input;
 
-import df.zhang.base.pojo.BaseApiOutputDTO;
-import lombok.AllArgsConstructor;
+import df.zhang.base.pojo.BaseApiInputDTO;
 import lombok.Data;
 
 /**
  * TODO
  *
  * @author df.zhang Email: 84154025@qq.com
- * @date 2019-04-22
+ * @date 2019-05-07
  * @since 1.0.0
  */
 @Data
-@AllArgsConstructor
-public class UserOutputDTO extends BaseApiOutputDTO {
+public class UserInputDTO extends BaseApiInputDTO {
     private String username;
-    private String password;
-    private String nickname;
     private String email;
 }

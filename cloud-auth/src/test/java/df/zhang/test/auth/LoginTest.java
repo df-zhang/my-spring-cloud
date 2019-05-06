@@ -15,12 +15,19 @@
  */
 package df.zhang.test.auth;
 
+import df.zhang.api.UserApi;
+import df.zhang.api.dto.input.UserInputDTO;
+import df.zhang.api.dto.output.UserOutputDTO;
+import df.zhang.base.pojo.ApiResult;
 import df.zhang.test.BaseTest;
-        import org.junit.Test;
-        import org.springframework.mock.web.MockHttpSession;
-        import org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestBuilders;
-        import org.springframework.test.web.servlet.MvcResult;
-        import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.junit.Test;
+import org.springframework.mock.web.MockHttpSession;
+import org.springframework.security.test.web.servlet.request.SecurityMockMvcRequestBuilders;
+import org.springframework.test.web.servlet.MvcResult;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+
+import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * 登录测试类
@@ -31,25 +38,35 @@ import df.zhang.test.BaseTest;
  */
 public class LoginTest extends BaseTest {
     protected MockHttpSession session;
+    @Resource
+    private UserApi userApi;
 
     @Test
     public void test() throws Exception {
         // 登录
         MvcResult result = mockMvc.perform(SecurityMockMvcRequestBuilders.formLogin().user("admin").password("admin"))
                 .andReturn();
-        System.out.println(result.getResponse().getContentAsString());
-        session = (MockHttpSession) result.getRequest().getSession();
-        // 匿名访问
-        result = mockMvc.perform(MockMvcRequestBuilders.get("/anonymous")).andReturn();
-        System.out.println(result.getResponse().getContentAsString());
-        // 登录后请求仅匿名可访问的资源
-        result = mockMvc.perform(MockMvcRequestBuilders.get("/anonymous").session(session)).andReturn();
-        System.out.println(result.getResponse().getContentAsString());
-        // 未登录请求需登录后才能访问的资源
-        result = mockMvc.perform(MockMvcRequestBuilders.get("/authenticated")).andReturn();
-        System.out.println(result.getResponse().getContentAsString());
-        // 登录后请求登录后可访问的资源
-        result = mockMvc.perform(MockMvcRequestBuilders.get("/authenticated").session(session)).andReturn();
-        System.out.println(result.getResponse().getContentAsString());
+//        System.out.println(result.getResponse().getContentAsString());
+//        session = (MockHttpSession) result.getRequest().getSession();
+//        // 匿名访问
+//        result = mockMvc.perform(MockMvcRequestBuilders.get("/anonymous")).andReturn();
+//        System.out.println(result.getResponse().getContentAsString());
+//        // 登录后请求仅匿名可访问的资源
+//        result = mockMvc.perform(MockMvcRequestBuilders.get("/anonymous").session(session)).andReturn();
+//        System.out.println(result.getResponse().getContentAsString());
+//        // 未登录请求需登录后才能访问的资源
+//        result = mockMvc.perform(MockMvcRequestBuilders.get("/authenticated")).andReturn();
+//        System.out.println(result.getResponse().getContentAsString());
+//        // 登录后请求登录后可访问的资源
+//        result = mockMvc.perform(MockMvcRequestBuilders.get("/authenticated").session(session)).andReturn();
+//        System.out.println(result.getResponse().getContentAsString());
+    }
+
+    @Test
+    public void testApi() {
+        ApiResult<List<UserOutputDTO>> apiResult = userApi.users(new UserInputDTO());
+        apiResult.ifSuccess(list -> {
+            System.out.println(list.size());
+        });
     }
 }

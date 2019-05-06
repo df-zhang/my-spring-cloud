@@ -21,6 +21,7 @@ import df.zhang.base.exception.IErrorCode;
 import lombok.*;
 
 import java.io.Serializable;
+import java.util.function.Consumer;
 
 /**
  * API结果包装类，预计采用protocol buffer来输出API调用结果。
@@ -71,5 +72,12 @@ public class ApiResult<T> implements Serializable {
     @JsonIgnore
     public boolean isSuccess() {
         return BasicErrorCode.SUCCESS.getCode().equals(this.code);
+    }
+
+    public void ifSuccess(Consumer<T> consumer) {
+        if (consumer == null) {
+            return;
+        }
+        consumer.accept(this.res);
     }
 }
