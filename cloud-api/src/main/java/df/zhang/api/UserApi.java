@@ -33,7 +33,7 @@ import java.util.List;
  * @date 2019-04-22
  * @since 1.0.0
  */
-@FeignClient(value = "user-api", url = "http://localhost", fallbackFactory = UserApiFallbackFactory.class)
+@FeignClient(value = "user-api", contextId = "cloud-test", url = "http://localhost", fallbackFactory = UserApiFallbackFactory.class)
 public interface UserApi extends BaseApi {
 
     /**
@@ -50,4 +50,9 @@ public interface UserApi extends BaseApi {
 
     @PostMapping("users")
     ApiResult<List<UserOutputDTO>> users(UserInputDTO inputDTO);
+
+    @GetMapping("group")
+    default ApiResult<String> getGroup() {
+        return ApiResult.<String>success().res("fdsfds");
+    }
 }

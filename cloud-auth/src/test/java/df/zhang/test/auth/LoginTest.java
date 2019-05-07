@@ -64,9 +64,10 @@ public class LoginTest extends BaseTest {
 
     @Test
     public void testApi() {
-        ApiResult<List<UserOutputDTO>> apiResult = userApi.users(new UserInputDTO());
-        apiResult.ifSuccess(list -> {
-            System.out.println(list.size());
-        });
+//        ApiResult<List<UserOutputDTO>> apiResult = userApi.users(new UserInputDTO());
+//        apiResult.ifSuccess(list -> {
+//            System.out.println(list.size());
+//        });
+        userApi.getByUsername("user").ifSuccess(System.out::println);
     }
 }

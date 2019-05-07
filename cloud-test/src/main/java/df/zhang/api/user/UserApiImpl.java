@@ -20,6 +20,8 @@ import df.zhang.api.dto.input.UserInputDTO;
 import df.zhang.base.pojo.ApiResult;
 import df.zhang.api.UserApi;
 import df.zhang.api.dto.output.UserOutputDTO;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -33,8 +35,9 @@ import java.util.List;
  */
 @RestController
 public class UserApiImpl implements UserApi {
+
     @Override
-    public ApiResult<UserOutputDTO> getByUsername(String username) {
+    public ApiResult<UserOutputDTO> getByUsername(@RequestParam String username) {
         UserOutputDTO userOutputDTO = new UserOutputDTO();
         userOutputDTO.setUsername("admin");
         userOutputDTO.setPassword("7445b0991419189b5c3848d2195f3cb9f99c3a25");
